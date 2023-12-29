@@ -1,10 +1,10 @@
-- 👋 Hi, I’m @BishalPandey1
+- 👋 Hi, I’m @BishalPandey1 or Bishal
 - 👀 I’m interested in coding and porgramming.
-- 🌱 I’m currently learning C++
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+- 🌱 I’m currently learning C++ and DSA
+- 💞️ I’m looking to best programming site's and other.
+- 📫 How to reach me by my facebook account or gmail account currently
 
-<<!---
-BishalPandey1/BishalPandey1 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+<<!
+currently i am just a learner and have idea of c, c++ currently.
+am to be the good one.
+>>

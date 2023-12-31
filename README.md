@@ -1,7 +1,7 @@
 <img align="right" alt="coding"width="1000" src="https://www.bing.com/th/id/OGC.af3b74e4b36077a6769bc2328b2f8a89?pid=1.7&rurl=https%3a%2f%2fgiffiles.alphacoders.com%2f174%2f1744.gif&ehk=6DIWMzB9oFYMUpPyF%2bdWCQKNbbuF2lJOK%2fTzHNFYbdA%3d">
 
-<h1 align="center">Hi 👋, I'm Bishal Pandey</h1>
-<h3 align="center">A passionate Software Engineer from Nepal.</h3>
+<H align="center">Hi 👋, I'm Bishal Pandey</H>
+<h1 align="center">A passionate Software Engineer from Nepal.</h1>
 <img align="right" alt="coding"width="400" src="https://www.bing.com/th/id/OGC.54e37d8074ebcde1d96c77d7b2a7f310?pid=1.7&rurl=https%3a%2f%2fi.pinimg.com%2foriginals%2f54%2fe3%2f7d%2f54e37d8074ebcde1d96c77d7b2a7f310.gif&ehk=PrEGdwL4PhD7Z%2fwJCNJ7ZoCNkliX6f%2bNR0nwPKvtck4%3d">
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=bishalpandey1&label=Profile%20views&color=0e75b6&style=flat" alt="bishalpandey1" /> </p>
 
@@ -22,4 +22,3 @@
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=bishalpandey1&show_icons=true&locale=en&layout=compact" alt="bishalpandey1" /></p>
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=bishalpandey1&show_icons=true&locale=en" alt="bishalpandey1" /></p>
-

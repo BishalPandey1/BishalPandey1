@@ -1,4 +1,4 @@
-<img align="right" alt="coding"width="1000" src="https://www.bing.com/th/id/OGC.af3b74e4b36077a6769bc2328b2f8a89?pid=1.7&rurl=https%3a%2f%2fgiffiles.alphacoders.com%2f174%2f1744.gif&ehk=6DIWMzB9oFYMUpPyF%2bdWCQKNbbuF2lJOK%2fTzHNFYbdA%3d">
+<img align="right" alt="coding"with="100""https://www.bing.com/th/id/OGC.af3b74e4b36077a6769bc2328b2f8a89?pid=1.7&rurl=https%3a%2f%2fgiffiles.alphacoders.com%2f174%2f1744.gif&ehk=6DIWMzB9oFYMUpPyF%2bdWCQKNbbuF2lJOK%2fTzHNFYbdA%3d">
 
 <H align="center">Hi 👋, I'm Bishal Pandey</H>
 <h1 align="center">A passionate Software Engineer from Nepal.</h1>

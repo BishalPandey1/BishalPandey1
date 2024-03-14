@@ -26,6 +26,6 @@
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=bishalpandey1&show_icons=true&locale=en" alt="bishalpandey1" /></p>
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=bishalpandey1&" alt="bishalpandey1" /></p>
-<Center>**Thank You**</Center>
+<Center><P>**Thank You**</P></Center>
  
 

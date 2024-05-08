@@ -3,13 +3,6 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-   *{
-      text-decoration: double;
-      color: rgb(51, 197, 83);
-      background-color: rgb(40, 39, 39);
-   }
-  </style>
 </head>
 <body>
    <h1 align="center">Hi 👋, I'm Bishal Padney</h1>

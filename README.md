@@ -8,7 +8,7 @@
    <h1 align="center">Hi 👋, I'm Bishal Padney</h1>
 <h3 align="center">A passionate Software Enginner from Nepal.</h3><hr>
 
-<img align="right" alt="coding"width="500" src="https://th.bing.com/th/id/R.ba6d7d37fa1e4ca966ac7328bf43b96c?rik=79CW1PjYQQpU1A&pid=ImgRaw&r=0">
+<img align="right" alt="coding"width="400" src="https://th.bing.com/th/id/R.ba6d7d37fa1e4ca966ac7328bf43b96c?rik=79CW1PjYQQpU1A&pid=ImgRaw&r=0">
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=bishalpandey1&label=Profile%20views&color=0e75b6&style=flat" alt="bishalpandey1" /> </p>
 
 - 🌱 I’m currently learning **Web development and DSA.**<br>

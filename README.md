@@ -2,7 +2,7 @@
 <H align="center">Hi 👋 and wonderful wellcome, I'm Bishal Pandey.</H><br>
 <H align="left">I love doing Programming and coding in different programming languages.</H><hr>
 <h1 align="center">A passionate Software Engineer from Nepal.</h1>
-<img align="right" alt="coding"width="400" src="https://www.bing.com/th/id/OGC.54e37d8074ebcde1d96c77d7b2a7f310?pid=1.7&rurl=https%3a%2f%2fi.pinimg.com%2foriginals%2f54%2fe3%2f7d%2f54e37d8074ebcde1d96c77d7b2a7f310.gif&ehk=PrEGdwL4PhD7Z%2fwJCNJ7ZoCNkliX6f%2bNR0nwPKvtck4%3d">
+<img align="right" alt="coding"width="400" src="https://www.bing.com/th/id/OGC.7755cd19d65c849a49efc43f3b4958c8?pid=1.7&rurl=https%3a%2f%2fmedia.giphy.com%2fmedia%2ffnD9cHHIrYRYk%2fgiphy.gif&ehk=zyNPEkOTRd%2bkVusA9QR6%2bFT9wYnreOEtMcCF7MfUQmU%3d">
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=bishalpandey1&label=Profile%20views&color=0e75b6&style=flat" alt="bishalpandey1" /> </p>
 - 🌱 I’m currently learning **Web development and DSA.**<br>
 

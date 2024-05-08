@@ -1,10 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+   *{
+      text-decoration: double;
+      color: rgb(51, 197, 83);
+      background-color: rgb(40, 39, 39);
+   }
+  </style>
+</head>
+<body>
+   <h1 align="center">Hi 👋, I'm Bishal Padney</h1>
+<h3 align="center">A passionate Software Enginner from Nepal.</h3><hr>
 
-
-<H align="center">Hi 👋 and wonderful wellcome, I'm Bishal Pandey.</H><br>
-<H align="left">I love doing Programming and coding in different programming languages.</H><hr>
-<h1 align="center">A passionate Software Engineer from Nepal.</h1>
-<img align="right" alt="coding"width="400" src="https://www.bing.com/th/id/OGC.54e37d8074ebcde1d96c77d7b2a7f310?pid=1.7&rurl=https%3a%2f%2fi.pinimg.com%2foriginals%2f54%2fe3%2f7d%2f54e37d8074ebcde1d96c77d7b2a7f310.gif&ehk=PrEGdwL4PhD7Z%2fwJCNJ7ZoCNkliX6f%2bNR0nwPKvtck4%3d">
+<img align="right" alt="coding"width="500" src="https://th.bing.com/th/id/R.ba6d7d37fa1e4ca966ac7328bf43b96c?rik=79CW1PjYQQpU1A&pid=ImgRaw&r=0">
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=bishalpandey1&label=Profile%20views&color=0e75b6&style=flat" alt="bishalpandey1" /> </p>
+
 - 🌱 I’m currently learning **Web development and DSA.**<br>
 
 - 📫 How to reach me **bishalpandey6200@gmail.com**<br>
@@ -27,3 +40,5 @@
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=bishalpandey1&show_icons=true&locale=en" alt="bishalpandey1" /></p>
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=bishalpandey1&" alt="bishalpandey1" /></p>
+</body>
+</html>

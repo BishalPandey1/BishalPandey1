@@ -7,7 +7,8 @@
 
 - 📫 How to reach me **bishalpandey6200@gmail.com**<br>
 
-- ⚡ Fun fact **I am simile and attractive.**
+- ⚡ Fun fact **I am simile and attractive.**<br>
+- Group activites**I Love doing the coding releated things in group.**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">

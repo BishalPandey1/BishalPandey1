@@ -1,4 +1,4 @@
-<!-- ![logo](https://mir-s3-cdn-cf.behance.net/project_modules/fs/54b6c068097599.5b50bca476b9b.gif)
+![logo](https://mir-s3-cdn-cf.behance.net/project_modules/fs/54b6c068097599.5b50bca476b9b.gif)
 <h1 align="center">Hi 👋 and wonderful wellcome, I'm Bishal Pandey.</h1>
 <h2 align="center">A passionate Software Engineer from Nepal.</h2>
 <img align="right" alt="coding"width="400" src="https://www.bing.com/th/id/OGC.fce4042b852965b966f94f40cbaef4b8?pid=1.7&rurl=https%3a%2f%2fmedia.tenor.com%2f-UygBh3nnfEAAAAC%2fcoding.gif&ehk=1hCg9lh%2frRFpQV2WDVtJadQ09wOujqgpnEJ6uI%2fzEdE%3d">
@@ -25,4 +25,4 @@
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=bishalpandey1&show_icons=true&locale=en" alt="bishalpandey1" /></p>
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=bishalpandey1&" alt="bishalpandey1" /></p> -->
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=bishalpandey1&" alt="bishalpandey1" /></p>

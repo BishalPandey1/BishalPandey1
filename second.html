@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bishal Pandey | App Developer & Security Expert</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* =========================================
+       VARIABLES
+    ========================================= */
+    :root {
+      --primary: #4c7c65;
+      --secondary: #00d4ff;
+      --accent: #a855f7;
+      --bg-dark: #050508;
+      --bg-card: #0c0c12;
+      --text: #e4e4e7;
+      --text-muted: #71717a;
+      --border: rgba(0, 255, 136, 0.1);
+    }
+
+    /* =========================================
+       RESET & BASE
+    ========================================= */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* Background Effects */
+    .bg-grid {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        linear-gradient(rgba(0,255,136,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Ambient glow orbs in background */
+    .bg-glow {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .bg-glow-1 {
+      width: 500px;
+      height: 500px;
+      background: rgba(0, 255, 136, 0.08);
+      top: -100px;
+      left: -100px;
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .bg-glow-2 {
+      width: 400px;
+      height: 400px;
+      background: rgba(0, 212, 255, 0.06);
+      bottom: 0;
+      right: -50px;
+      animation: float 15s ease-in-out infinite reverse;
+    }
+
+    .bg-glow-3 {
+      width: 300px;
+      height: 300px;
+      background: rgba(168, 85, 247, 0.05);
+      top: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: pulse-ambient 10s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(30px, 30px); }
+    }
+
+    @keyframes pulse-ambient {
+      0%, 100% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+      50% { opacity: 0.8; transform: translateX(-50%) scale(1.2); }
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Container glow on sides */
+    .container::before,
+    .container::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, rgba(0,255,136,0.3), transparent);
+      pointer-events: none;
+    }
+
+    .container::before { left: 2rem; }
+    .container::after { right: 2rem; }
+
+    /* =========================================
+       BANNER
+    ========================================= */
+.banner {
+      position: relative;
+      margin-bottom: 1.5rem;
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      padding: 2.2rem 2.5rem;
+      gap: 2.5rem;
+      box-shadow: 
+        0 20px 50px rgba(0,0,0,0.5),
+        0 0 40px rgba(0,255,136,0.05),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      background: radial-gradient(circle at 20% 50%, rgba(0,255,136,0.08), transparent 50%),
+                  radial-gradient(circle at 80% 50%, rgba(0,212,255,0.06), transparent 50%);
+    }
+
+    .banner::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 21px;
+      background: linear-gradient(135deg, var(--primary), transparent 50%, var(--secondary));
+      z-index: -1;
+      opacity: 0.4;
+      transition: all 0.4s ease;
+      filter: blur(8px);
+    }
+
+    .banner:hover {
+      border-color: rgba(0,255,136,0.15);
+      box-shadow: 
+        0 25px 60px rgba(0,0,0,0.6),
+        0 0 50px rgba(0,255,136,0.1),
+        0 0 80px rgba(0,255,136,0.05),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    .banner:hover::after {
+      opacity: 0.7;
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      background: radial-gradient(circle at 20% 50%, rgba(0,255,136,0.08), transparent 50%),
+                  radial-gradient(circle at 80% 50%, rgba(0,212,255,0.06), transparent 50%);
+    }
+
+    .profile-wrapper {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .profile-img {
+      width: 145px;
+      height: 145px;
+      border-radius: 50%;
+      border: 3px solid rgba(0,255,136,0.5);
+      object-fit: cover;
+      box-shadow: 
+        0 0 30px rgba(0,255,136,0.25),
+        0 0 60px rgba(0,255,136,0.1),
+        0 0 100px rgba(0,255,136,0.05),
+        inset 0 0 20px rgba(0,255,136,0.1);
+      transition: all 0.4s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.03);
+      box-shadow: 
+        0 0 40px rgba(0,255,136,0.35),
+        0 0 80px rgba(0,255,136,0.15),
+        0 0 120px rgba(0,255,136,0.08);
+      border-color: rgba(0,255,136,0.7);
+    }
+
+    .online-indicator {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      width: 22px;
+      height: 22px;
+      background: var(--primary);
+      border-radius: 50%;
+      border: 3px solid var(--bg-card);
+      box-shadow: 
+        0 0 15px var(--primary),
+        0 0 30px var(--primary),
+        0 0 45px rgba(0,255,136,0.5);
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { 
+        box-shadow: 0 0 15px var(--primary), 0 0 30px var(--primary); 
+      }
+      50% { 
+        box-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary), 0 0 60px rgba(0,255,136,0.3); 
+      }
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #888;
+    }
+
+    .name span {
+      display: inline-block;
+      animation: glitch 2s infinite;
+    }
+
+    .name::before { content: '> '; color: var(--primary); }
+
+    @keyframes glitch {
+      0%, 90%, 100% { opacity: 1; transform: translateY(0); }
+      92% { opacity: 0.6; transform: translateY(-2px); }
+      94% { opacity: 1; transform: translateY(0); }
+    }
+
+    .typewriter {
+      min-height: 1.8em;
+      margin: 0.6rem 0;
+    }
+
+    .typewriter-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.05rem;
+      color: var(--primary);
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.1em;
+      background: var(--primary);
+      margin-left: 3px;
+      vertical-align: text-bottom;
+      animation: blink 0.8s step-end infinite;
+    }
+
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .role-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 0.6rem;
+      letter-spacing: 0.5px;
+      animation: flicker 0.15s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+      52% { opacity: 0.3; }
+      54% { opacity: 0.9; }
+    }
+
+    .location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.9rem;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .location-badge i { color: var(--primary); }
+
+    .banner-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .profile-views img {
+      height: 18px;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 700px) {
+      .banner { flex-direction: column; text-align: center; padding: 2rem 1.5rem; gap: 1.5rem; }
+      .profile-img { width: 120px; height: 120px; }
+      .name { font-size: 1.6rem; }
+    }
+
+    /* =========================================
+       CARDS
+    ========================================= */
+    .card {
+      position: relative;
+      background: linear-gradient(145deg, rgba(15,15,20,0.95), rgba(12,12,18,0.9));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 1.8rem;
+      margin-bottom: 1.3rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,255,136,0.3), transparent);
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 19px;
+      background: linear-gradient(135deg, var(--primary), transparent 60%, var(--secondary));
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      filter: blur(6px);
+    }
+
+    .card:hover {
+      border-color: rgba(0,255,136,0.15);
+      transform: translateY(-4px);
+      box-shadow: 
+        0 20px 50px -10px rgba(0,0,0,0.5),
+        0 0 30px rgba(0,255,136,0.08);
+    }
+
+    .card:hover::after {
+      opacity: 0.5;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(0,255,136,0.12), rgba(0,212,255,0.08));
+      border: 1px solid rgba(0,255,136,0.15);
+      color: var(--primary);
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(0,255,136,0.1);
+    }
+
+    .card-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.3px;
+    }
+
+    .card-title::before { content: '// '; color: var(--primary); opacity: 0.5; }
+
+    /* =========================================
+       CODE BLOCK
+    ========================================= */
+    .code-block {
+      position: relative;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      line-height: 2;
+      background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+      padding: 1.5rem 1.2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(0,255,136,0.08);
+      margin-bottom: 1.4rem;
+      overflow-x: auto;
+      box-shadow: inset 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .code-block::before {
+      content: '● ● ●';
+      position: absolute;
+      top: 8px;
+      left: 15px;
+      font-size: 8px;
+      color: rgba(255,255,255,0.15);
+      letter-spacing: 4px;
+    }
+
+    .code-block .keyword { color: var(--accent); font-weight: 600; }
+    .code-block .string { color: var(--primary); }
+    .code-block .array { color: var(--secondary); }
+    .code-block .property { color: var(--secondary); font-weight: 500; }
+
+    /* =========================================
+       SKILLS
+    ========================================= */
+    .skills-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      opacity: 0.6;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .skills-label::before { content: '// '; opacity: 0.5; }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .skill-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.8rem 1rem;
+      background: rgba(0,0,0,0.2);
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .group-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      color: #444;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-tag {
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      transition: all 0.3s ease;
+    }
+
+    .skill-tag.dev {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(168, 85, 247, 0.05));
+      border: 1px solid rgba(168, 85, 247, 0.2);
+      color: #999;
+    }
+
+    .skill-tag.dev:hover {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(168, 85, 247, 0.1));
+      color: var(--accent);
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+      transform: translateY(-2px);
+    }
+
+    .skill-tag.security {
+      background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 255, 136, 0.05));
+      border: 1px solid rgba(0, 255, 136, 0.15);
+      color: #999;
+    }
+
+    .skill-tag.security:hover {
+      background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 255, 136, 0.1));
+      color: var(--primary);
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.25);
+      transform: translateY(-2px);
+    }
+
+    .skill-tag.system {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 212, 255, 0.05));
+      border: 1px solid rgba(0, 212, 255, 0.15);
+      color: #999;
+    }
+
+    .skill-tag.system:hover {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 212, 255, 0.1));
+      color: var(--secondary);
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.25);
+      transform: translateY(-2px);
+    }
+
+    /* =========================================
+       LANGUAGES GRID
+    ========================================= */
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+      gap: 0.7rem;
+    }
+
+    .lang-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1.2rem 0.6rem;
+      background: linear-gradient(145deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2));
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 14px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .lang-item::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .lang-item:hover {
+      background: linear-gradient(145deg, rgba(0,255,136,0.1), rgba(0,255,136,0.05));
+      border-color: rgba(0,255,136,0.2);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px -10px rgba(0,255,136,0.2);
+    }
+
+    .lang-item:hover::before {
+      opacity: 1;
+    }
+
+    .lang-item img {
+      width: 32px;
+      height: 32px;
+      filter: grayscale(30%) brightness(0.8);
+      transition: all 0.3s ease;
+    }
+
+    .lang-item:hover img {
+      filter: grayscale(0%) brightness(1);
+      transform: scale(1.1);
+    }
+
+    .lang-item span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .lang-item:hover span {
+      color: var(--primary);
+    }
+
+    /* =========================================
+       INFO GRID
+    ========================================= */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .info-grid { grid-template-columns: 1fr; }
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.8rem 1rem;
+      background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.15));
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.04);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      transition: all 0.3s ease;
+    }
+
+    .info-item:hover {
+      background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(0,255,136,0.05));
+      border-color: rgba(0,255,136,0.1);
+    }
+
+    .info-item i {
+      color: var(--primary);
+      width: 16px;
+      font-size: 0.85rem;
+    }
+
+    /* =========================================
+       SOCIAL
+    ========================================= */
+    .social-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+      display: block;
+      opacity: 0.6;
+    }
+
+    .social-label::before { content: '// '; color: var(--primary); opacity: 0.5; }
+
+    .social-grid {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(15,15,20,0.8), rgba(8,8,12,0.6));
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #666;
+      font-size: 1.4rem;
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .social-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .social-btn::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .social-btn i {
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s ease;
+    }
+
+    .social-btn:hover {
+      border-color: rgba(0,255,136,0.3);
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 
+        0 15px 35px -10px rgba(0,255,136,0.3),
+        0 0 30px rgba(0,255,136,0.1);
+    }
+
+    .social-btn:hover::before {
+      opacity: 0.12;
+    }
+
+    .social-btn:hover::after {
+      transform: scaleX(1);
+    }
+
+    .social-btn:hover i {
+      color: var(--primary);
+      text-shadow: 0 0 15px var(--primary);
+      transform: scale(1.1);
+    }
+
+    /* Individual social colors on hover */
+    .social-btn[title="Twitter"]:hover { border-color: rgba(29, 161, 242, 0.5); }
+    .social-btn[title="Twitter"]:hover i { color: #1da1f2; text-shadow: 0 0 15px #1da1f2; }
+    .social-btn[title="Twitter"]:hover::after { background: linear-gradient(90deg, #1da1f2, #1da1f2); }
+
+    .social-btn[title="Facebook"]:hover { border-color: rgba(66, 103, 178, 0.5); }
+    .social-btn[title="Facebook"]:hover i { color: #4267b2; text-shadow: 0 0 15px #4267b2; }
+    .social-btn[title="Facebook"]:hover::after { background: linear-gradient(90deg, #4267b2, #4267b2); }
+
+    .social-btn[title="Instagram"]:hover { border-color: rgba(225, 48, 108, 0.5); }
+    .social-btn[title="Instagram"]:hover i { color: #e1306c; text-shadow: 0 0 15px #e1306c; }
+    .social-btn[title="Instagram"]:hover::after { background: linear-gradient(90deg, #e1306c, #f77737); }
+
+    .social-btn[title="YouTube"]:hover { border-color: rgba(255, 0, 0, 0.5); }
+    .social-btn[title="YouTube"]:hover i { color: #ff0000; text-shadow: 0 0 15px #ff0000; }
+    .social-btn[title="YouTube"]:hover::after { background: linear-gradient(90deg, #ff0000, #ff0000); }
+
+    .social-btn[title="Email"]:hover { border-color: rgba(251, 191, 36, 0.5); }
+    .social-btn[title="Email"]:hover i { color: #fbbf24; text-shadow: 0 0 15px #fbbf24; }
+    .social-btn[title="Email"]:hover::after { background: linear-gradient(90deg, #fbbf24, #f59e0b); }
+
+    /* =========================================
+       STATS
+    ========================================= */
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: center;
+      padding: 0.5rem 0;
+    }
+
+    .stats-grid img {
+      border-radius: 12px;
+      border: 1px solid rgba(0,255,136,0.1);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .stats-grid img:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 8px 25px -5px rgba(0,255,136,0.2);
+      border-color: rgba(0,255,136,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+
+  <div class="container">
+    <!-- ========================================
+         BANNER SECTION
+    ======================================== -->
+    <div class="banner">
+      <div class="profile-wrapper">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/54b6c068097599.5b50bca476b9b.gif" alt="Bishal" class="profile-img">
+        <div class="online-indicator"></div>
+      </div>
+
+      <div class="banner-content">
+        <h1 class="name"><span>B</span><span>i</span><span>s</span><span>h</span><span>a</span><span>l</span> <span>P</span><span>a</span><span>n</span><span>d</span><span>e</span><span>y</span></h1>
+
+        <div class="typewriter">
+          <span class="typewriter-text" id="typeText"></span><span class="cursor"></span>
+        </div>
+
+        <p class="role-text">Core of App Development & Advance Network Security</p>
+
+        <div class="banner-footer">
+          <div class="location-badge">
+            <i class="fas fa-map-marker-alt"></i> Nepal
+          </div>
+          <div class="profile-views">
+            <img src="https://komarev.com/ghpvc/?username=bishalpandey1&label=Profile+Views&color=00ff88&style=flat" alt="views">
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+    <!-- ========================================
+         ABOUT SECTION
+    ======================================== -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon"><i class="fas fa-user"></i></div>
+        <h2 class="card-title">About Me</h2>
+      </div>
+
+      <div class="code-block">
+<span class="keyword">const</span> bishal = {<br>
+&nbsp;&nbsp;<span class="property">role</span>: <span class="string">"Core of App Development & Advance Network Security"</span>,<br>
+&nbsp;&nbsp;<span class="property">learning</span>: [<span class="array">"Python"</span>, <span class="array">"Flutter"</span>, <span class="array">"Security"</span>],<br>
+&nbsp;&nbsp;<span class="property">passion</span>: <span class="string">"Building apps & hacking"</span><br>
+};
+      </div>
+
+      <p class="skills-label">Skills & Technologies</p>
+      <div class="skills-container">
+        <div class="skill-group">
+          <span class="group-label">Dev</span>
+          <div class="skill-tags">
+            <span class="skill-tag dev">Flutter</span>
+            <span class="skill-tag dev">Database</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <span class="group-label">Security</span>
+          <div class="skill-tags">
+            <span class="skill-tag security">Offensive</span>
+            <span class="skill-tag security">Defensive</span>
+            <span class="skill-tag security">Network Scan</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <span class="group-label">System</span>
+          <div class="skill-tags">
+            <span class="skill-tag system">Linux</span>
+            <span class="skill-tag system">Windows Server</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         LANGUAGES & TOOLS
+    ======================================== -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon"><i class="fas fa-code"></i></div>
+        <h2 class="card-title">Languages & Tools</h2>
+      </div>
+      <div class="lang-grid">
+        <a href="https://www.cprogramming.com/" target="_blank" class="lang-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="C"><span>C</span></a>
+        <a href="https://www.w3schools.com/cpp/" target="_blank" class="lang-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span></a>
+        <a href="https://www.w3schools.com/css/" target="_blank" class="lang-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS"><span>CSS</span></a>
+        <a href="https://www.w3.org/html/" target="_blank" class="lang-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML"><span>HTML</span></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="lang-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JS"><span>JS</span></a>
+        <a href="https://www.php.net/" target="_blank" class="lang-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="PHP"><span>PHP</span></a>
+        <a href="https://www.java.com/" target="_blank" class="lang-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java"><span>Java</span></a>
+        <a href="https://docs.microsoft.com/en-us/dotnet/csharp/" target="_blank" class="lang-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="C#"><span>C#</span></a>
+        <a href="https://dart.dev/" target="_blank" class="lang-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg" alt="Dart"><span>Dart</span></a>
+        <a href="https://www.python.org/" target="_blank" class="lang-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python"><span>Python</span></a>
+        <a href="https://www.mysql.com/" target="_blank" class="lang-item"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" alt="SQL"><span>SQL</span></a>
+      </div>
+    </div>
+
+    <!-- ========================================
+         CONNECT
+    ======================================== -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon"><i class="fas fa-link"></i></div>
+        <h2 class="card-title">Connect</h2>
+      </div>
+      <div class="info-grid">
+        <div class="info-item"><i class="fas fa-envelope"></i> <a href="mailto:bishalpandey6200@gmail.com" style="color: inherit; text-decoration: none;">bishalpandey6200@gmail.com</a></div>
+        <div class="info-item"><i class="fas fa-map-marker-alt"></i> Nepal</div>
+        <div class="info-item"><i class="fas fa-code"></i> Software Engineer</div>
+        <div class="info-item"><i class="fas fa-shield-alt"></i> Network Security</div>
+      </div>
+      <span class="social-label">Social Links</span>
+      <div class="social-grid">
+        <a href="mailto:bishalpandey6200@gmail.com" class="social-btn" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://twitter.com/@bishalp05950544" target="_blank" class="social-btn" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://fb.com/bishal.pandey.58323" target="_blank" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/bishal.pandey.58323" target="_blank" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@bishal928" target="_blank" class="social-btn" title="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- ========================================
+         GITHUB STATS
+    ======================================== -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon"><i class="fab fa-github"></i></div>
+        <h2 class="card-title">GitHub Stats</h2>
+      </div>
+      <div class="stats-grid">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs?username=bishalpandey1&show_icons=true&locale=en&layout=compact&bg_color=0c0c12&title_color=00ff88&text_color=e4e4e7&icon_color=00ff88&hide_border=true" alt="Languages">
+        <img src="https://github-readme-stats.vercel.app/api?username=bishalpandey1&show_icons=true&locale=en&bg_color=0c0c12&title_color=00ff88&text_color=e4e4e7&icon_color=00ff88&hide_border=true" alt="Stats">
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user=bishalpandey1&background=0c0c12&stroke=00ff88&ring=00ff88&fire=00ff88&currStreakNum=e4e4e7&sideNums=e4e4e7&currStreakLabel=00ff88&sideLabels=00ff88&dates=71717a&hide_border=true" alt="Streak">
+      </div>
+    </div>
+
+    </div>
+
+  <script>
+    const phrases = [
+      "Hello, warm welcome............",
+      "Passionate in app development & network security"
+    ];
+
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const element = document.getElementById('typeText');
+
+    function type() {
+      const currentPhrase = phrases[phraseIndex];
+
+      if (isDeleting) {
+        element.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        element.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      if (!isDeleting && charIndex === currentPhrase.length) {
+        setTimeout(() => { isDeleting = true; }, 3000);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+      }
+
+      const speed = isDeleting ? 40 : 70;
+      setTimeout(type, speed);
+    }
+
+    type();
+  </script>
+</body>
+</html>
